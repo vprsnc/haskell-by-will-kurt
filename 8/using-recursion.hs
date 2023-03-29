@@ -5,7 +5,7 @@ myDrop n xs =
 
 myDrop' _ [] = []
 myDrop' n xs =
-  if length xs == len
+  if length xs <= len
   then xs
   else myDrop' n (tail xs)
  where len = length xs - n
@@ -36,3 +36,15 @@ fastFib _ _ 1 = 1
 fastFib _ _ 2 = 1
 fastFib x y 3 = x + y
 fastFib x y c = fastFib (x + y) x (c - 1)
+
+fibTail n = go n (0, 1)
+  where
+    go 0 (a, b) = a
+    go 1 (a, b) = b
+    go n (a, b) = go (n - 1) (b, a + b)
+
+fact 0 = 1
+fact n = n * fact (n - 1)
+
+map' f []     = []
+map' f (x:xs) =  f x  : map' f xs
