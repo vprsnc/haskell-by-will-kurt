@@ -13,8 +13,8 @@ myHead (x:xs) = x
 myHead [] = error "There is no head for an empty list!"
 
 -- 7.1
-myTail (_:xs) = xs
 myTail [] = []
+myTail (_:xs) = xs
 
 -- 7.2
 myNewGCD a 0 = a
